@@ -7,4 +7,4 @@ client.on('ready', () => {
   console.log(`Logado como ${client.user.username}`);
 });
 
-client.login(process.env.TOKEN);
+client.login(process.env.AUTH_KEY); // Novo nome da variável
