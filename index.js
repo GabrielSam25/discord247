@@ -1,11 +1,10 @@
-const Eris = require("eris");
-const keep_alive = require('./keep_alive.js')
+require('dotenv').config();
+const { Client } = require('discord.js-selfbot-v13');
 
-// Replace TOKEN with your bot account's token
-const bot = new Eris(process.env.token);
+const client = new Client();
 
-bot.on("error", (err) => {
-  console.error(err); // or your preferred logger
+client.on('ready', () => {
+  console.log(`Logado como ${client.user.username}`);
 });
 
-bot.connect(); // Get the bot to connect to Discord
+client.login(process.env.TOKEN);
